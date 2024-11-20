@@ -56,7 +56,7 @@ d = float(input())
 e = float(input())
 
 av = (a+b+c+d+e)/5
-print(av)
+print(av) 
 
 
 
