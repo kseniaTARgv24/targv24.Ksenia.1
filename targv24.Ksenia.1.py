@@ -58,6 +58,11 @@ e = float(input())
 av = (a+b+c+d+e)/5
 print(av) 
 
+#Ül.8
+print("   @..@ \n   (----)\n  ( \__/ )\n^^ "" ^^  ")  
+
+
+
 
 
 
