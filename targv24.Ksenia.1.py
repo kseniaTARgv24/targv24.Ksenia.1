@@ -2,12 +2,12 @@ from random import * #   *-ALL FUNC-S,      randit as rd
 from math import *
 
 #ülesanne 1
-print("bulka")
+print("\n\n bulka")
 nimi = input("Tell me your name, and I'll tell what's your name. Don't believe me? Try and press Enter! ")  #lower(), upper(),capitalize()
 print("Your name is",nimi+"!")
 vanus = int(input("I also can guess your age! so... input your age and press Enter. "))
 print("Your age is",vanus,"haha! See, "+nimi+" I know everything about you! (without f, int only with ,,)")
-print(f"Your age is {vanus} haha! See, {nimi} I know everything about you! (made with f)")
+print(f"Your age is {vanus} haha! See, {nimi} I know everything about you! (made with f)\n\n ")
 
 #Ülesanne 2
 vanus = 18
@@ -21,34 +21,34 @@ print(type(kas_käib_koolis))
 
 #Ülesanne3
 kommid = randint(1,100)
-print("There're",kommid,"candies on the table. How much do you want?")
+print("\n\n There're",kommid,"candies on the table. How much do you want?")
 mitu = int(input())
 kommid = kommid - mitu
 print("Now there're",kommid,"candies left")
 
 #Ül.4
-d = float(input("Give me diameter and I'll give you circumference..."))
+d = float(input("\n\n Give me diameter and I'll give you circumference..."))
 pi = 3.14
 r = (d/2)
 c = (2*r*pi)
 print(c)
 
 #Ül.5
-print("Give me length of the sides of a rectangular plot and I'll give you diagonal")
+print("\n\n Give me length of the sides of a rectangular plot and I'll give you diagonal")
 a = float(input())
 b = float(input())
 d = ((a**2)+(b**2))**0.5
 print(d)
 
 #Ül.6
-aeg = float(input("Mitu tundi kulus sõiduks? "))
+aeg = float(input("\n\n Mitu tundi kulus sõiduks? "))
 teepikkus = float(input("Mitu kilomeetrit sõitsid? "))
 kiirus = aeg / teepikkus
 
 print(f"Sinu kiirus oli {kiirus} km/h")
 
 #Ül.7
-print("Give 5 numbers and I'll find the average...")
+print("\n\n Give 5 numbers and I'll find the average...")
 a = float(input())
 b = float(input())
 c = float(input())
@@ -59,7 +59,27 @@ av = (a+b+c+d+e)/5
 print(av) 
 
 #Ül.8
-print("   @..@ \n   (----)\n  ( \__/ )\n^^ "" ^^  ")  
+print("\n\n    @..@ \n  (----)\n ( \__/ )\n  ^^ "" ^^  ")  
+
+#Ul.9
+print("\n\n give me 3 sides of a △, and I'll calculate its perimeter")
+a = float(input())
+b = float(input())
+c = float(input())
+P = (a*b*c)
+print("the perimeter is",P)
+
+#Ul. 10
+print("\n\n     Võtsite P sõbraga suure pitsa hinnaga 12,90€ \nJätate teenindajale 10% jootraha.")
+hind = 12.9
+joot = hind*0.1
+kokku = hind + joot
+print("Kokku te leate maksma",kokku,"Utle mulle, kui palju sopru on, ja ma utlen kui palju iga uks peab maksma.")
+P = int(input()) # Ставлю здесь инт, чтобы не дать пользователю ввести дробное число людей
+P = float(P) #Привожу число людей к тому же типу данных, что и сумму денег
+vastus = kokku/P
+print("Iga uks peab maksma",vastus,"eur")
+
 
 
 
