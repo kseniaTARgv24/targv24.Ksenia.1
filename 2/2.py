@@ -43,7 +43,7 @@ print("\nUl.4\n")
 Ümber= 2 * pi * 6378000000 #mm
 münt= 25.75
 vastus = int(Ümber/münt)
-print(f"{vastus} 2-euroseid münte tuleb panna üksteise kõrvale, et rida ulatuks ümber Maa")
+print(f"{vastus} 2-euroseid münte tuleb panna üksteise kõrvale, et rida ulatuks ümber Maa. {vastus*2} eur")
 
 print("\nUl.5\n")
 
