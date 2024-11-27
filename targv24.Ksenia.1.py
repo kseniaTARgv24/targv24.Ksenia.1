@@ -5,9 +5,14 @@ from math import *
 print("bulka")
 nimi = input("Tell me your name, and I'll tell what's your name. Don't believe me? Try and press Enter! ")  #lower(), upper(),capitalize()
 print("Your name is",nimi+"!")
-vanus = int(input("I also can guess your age! so... input your age and press Enter. "))
-print("Your age is",vanus,"haha! See, "+nimi+", I know everything about you! (without f, int only with ,,)")
-print(f"Your age is {vanus} haha! See, {nimi}, I know everything about you! (made with f)\n\n ")
+try:
+    vanus = int(input("I also can guess your age! so... input your age and press Enter. "))
+    print("Your age is",vanus,"haha! See, "+nimi+", I know everything about you! (without f, int only with ,,)")
+    print(f"Your age is {vanus} haha! See, {nimi}, I know everything about you! (made with f)\n\n ")
+except:
+    print("Put numbers please")
+
+
 
 #Ülesanne 2
 vanus = 18
