@@ -96,7 +96,7 @@ import random
 #      print(f"Sul on soodustus! {a:2f} eur")
 # else:
 #      print("Sul ei ole soodustus.")
-#      print(r"""
+#      print("""
 #      /\_/\  
 #    ( ° w ° )
 #     (  -  ) 
@@ -144,36 +144,92 @@ import random
 
 
 
-print("\n Ul.7\n")
-p=float(input("Ütle kui pikk sa oled cm"))
-s=input("Mis on sinu sugu? (n, m)")
+# print("\n Ul.7\n")
+# p=float(input("Ütle kui pikk sa oled cm"))
+# s=input("Mis on sinu sugu? (n, m)")
 
-if s.upper()=="N":
-    if p<=155:
-        print("oled lühike")
-    elif p<=175:
-        print("oled ok")
-    else:
-        print("oled pikk")
-elif s.upper()=="M":
-    if p<=165:
-        print("oled lühike")
-    elif p<=185:
-        print("oled ok")
-    else:
-        print("oled pikk") 
-else:
-    print("vasta normaalselt")
+# if s.upper()=="N":
+#     if p<=155:
+#         print("oled lühike")
+#     elif p<=175:
+#         print("oled ok")
+#     else:
+#         print("oled pikk")
+# elif s.upper()=="M":
+#     if p<=165:
+#         print("oled lühike")
+#     elif p<=185:
+#         print("oled ok")
+#     else:
+#         print("oled pikk") 
+# else:
+#     print("vasta normaalselt")
 
 
 print("\n Ul.8\n")
+
+pCount=0
+lCount=0
+mCount=0
+
+phind=random.uniform(1.5, 2.5)
+lhind=random.uniform(1.5, 3.5)
+mhind=random.uniform(2.5, 5.5)
+
 p=input("Kas sa tahad osta piima (jah, ei)")
+if p.upper()=="JAH":
+    kuipalju=int(input("kui palju? "))
+    pCount+=kuipalju
 l=input("Kas sa tahad osta leiba (jah, ei)")
+if l.upper()=="JAH":
+   kuipalju=int(input("kui palju? "))
+   lCount+=kuipalju
 m=input("Kas sa tahad osta munade pakki (jah, ei)")
+if m.upper()=="JAH":
+   kuipalju=int(input("kui palju? "))
+   mCount+=kuipalju
 
-phind=random_float(1.5, 2.5)
-lhind=random_float(1.5, 3.5)
-mhind=random_float(2.5, 5.5)
+print(f"""
+Tsekk:
+piim   --- {pCount} --- {pCount*phind:.2f}
+leib   --- {lCount} --- {lCount*lhind:.2f}
+munad  --- {mCount} --- {mCount*mhind:.2f}
+--------------------------------------
+                 kokku: {(pCount*phind)+(lCount*lhind)+(mCount*mhind):.2f}""")
 
-if p.upper()="JAH":
+
+print("\n Ul.9\n")
+print("Palun sisesta ruudu küljed")
+a=input()
+b=input()
+if a==b:
+    print("Jah, see on ruut")
+else:
+    print("Ei ole ruut!")
+
+print("\n Ul.10\n")
+print("Sisesta 2 arvu")
+a=float(input())
+b=float(input())
+t=input("mis tehet sa soovid. vasta +, -, / või *")
+if t=="+":
+    vastus=a+b
+    print(f"vastus on {vastus:f}")
+elif t=="-":
+    vastus=a-b
+    print(f"vastus on {vastus:f}")
+elif t=="/":
+    if b == 0:
+        print("haha very funny")
+    else:
+      vastus=a/b
+      print(f"vastus on {vastus:f}")
+elif t=="*":
+    vastus=a*b
+    print(f"vastus on {vastus:f}")
+else:
+    print("palun sisesta see mida ma palusin")
+
+
+print("\n Ul.11\n")
 
