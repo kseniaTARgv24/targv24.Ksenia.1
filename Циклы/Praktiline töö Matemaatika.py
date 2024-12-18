@@ -38,7 +38,7 @@ while True:
                         print(f"Points: {points}")
                     else:
                          print(f"Points: {points}")
-            if points <6:
+            if points <60:
                 print("оценка 2")
             elif points < 80:
                 print("оценка 3")
@@ -88,7 +88,7 @@ while True:
                         print(f"Points: {points}")
                     else:
                          print(f"Points: {points}")
-            if points <6:
+            if points <60:
                 print("оценка 2")
             elif points < 80:
                 print("оценка 3")
@@ -131,7 +131,7 @@ while True:
                         print(f"Points: {points}")
                     else:
                          print(f"Points: {points}")
-            if points <6:
+            if points <60:
                 print("оценка 2")
             elif points < 80:
                 print("оценка 3")
