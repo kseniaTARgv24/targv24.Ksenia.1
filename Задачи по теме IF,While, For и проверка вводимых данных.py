@@ -173,7 +173,7 @@ while user_input != "STOP":
     else:
         print(f"There is no remainder! a / 3 = {a/3}")
         user_input=input().upper()
-
+         
 
 
 
