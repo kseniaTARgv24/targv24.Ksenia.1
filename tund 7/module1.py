@@ -75,13 +75,13 @@ def is_prime(a:float)->bool:
 
 def date(a:int,b:int,c:int)->bool:
     if 0<a<32 and 0<b<13 and 0<c:
-        if a == 31 and b in [1,12,10,8,7,5,3]:
+        if 0<a<32 and b in [1,12,10,8,7,5,3]:
             v=True
-        elif a == 30 and b in [11,9,6,4]:
+        elif 0<a< 31 and b in [11,9,6,4]:
             v=True
-        elif a ==28 and b == 3 and c%4!=0:
+        elif 0<a<29 and b == 3 and c%4!=0:
             v=True
-        elif a ==29 and b == 3 and c%4==0:
+        elif 0<a<30 and b == 3 and c%4==0:
             v=True
         else:
             v=False
@@ -89,11 +89,11 @@ def date(a:int,b:int,c:int)->bool:
         v=False
     return v
 
-def XOR_cipher(a:str, key:str)->str:
-    coded=" "
-    for symbol in text:
-        coded+=chr(ord(symbol)^key)
-    return coded
+# def XOR_cipher(a:str, key:str)->str:
+#     coded=" "
+#     for symbol in text:
+#         coded+=chr(ord(symbol)^key)
+#     return coded
 
 
 
