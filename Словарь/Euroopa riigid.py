@@ -8,7 +8,7 @@ def file_to_dict(f: str):
     countries = []  # List to store country names
     capitals = []
 
-    file = open(f, 'r', encoding="utf-8-sig")  # Open file with utf-8-sig encoding
+    file = open(f, 'r', encoding="utf-8-sig")  # Open file with utf-8-sig encoding   ## RRRRR!!!!!!!!
     for line in file:
         k, v = line.strip().split('-', 1)  # Split each line by '-'
         country_capital[k] = v  # Fill country_capital dictionary
@@ -18,12 +18,11 @@ def file_to_dict(f: str):
     file.close()
     return country_capital, capital_country, countries, capitals  # Return the dictionaries and list
 
-# Call the function and assign the result to variables
-country_capital, capital_country, countries, capitals = file_to_dict("riigid_pealinnad.txt")
-
-
-
-
+def save_to_file(f:str, country_capital:dict):
+   file = open(f, 'w', encoding="utf-8-sig")  # Open file with utf-8-sig encoding           ## WWWWWWWWWW!!!!!
+   for country, capital in country_capital.items():
+        file.write(f"{country}-{capital}\n")            ############ got help with this line.... Don't understand yet......
+   file.close()
 
 
 # mainscreen = tk.Tk()
@@ -39,12 +38,11 @@ country_capital, capital_country, countries, capitals = file_to_dict("riigid_pea
 # v_menu= tk.Menu(my_menu, tearoff = 0)
 # my_menu.add_cascade(label="Find country by capital", menu = v_menu)
 
-
-
-
-
-print("Menu: \n\n1 -- Find country by capital \n\n2 -- Find capital by country\n\n3 -- Try your knowledge!\n\n0 -- QUIT")
 while True:
+    # Call the function and assign the result to variables
+    country_capital, capital_country, countries, capitals = file_to_dict("riigid_pealinnad.txt")
+    # print(capital_country)
+    print("Menu: \n\n1 -- Find country by capital \n\n2 -- Find capital by country\n\n3 -- Try your knowledge!\n\n0 -- QUIT")
     action = int(input("\n\n Insert the number of the wanted action --> "))
     if action in [0, 1, 2, 3]:
 
@@ -64,6 +62,8 @@ while True:
                         del capital_country[capital]
                         country=input("Please write the right name of a country (in Estonian) --> ")
                         capital_country[capital]=country
+                        country_capital[country]=capital
+                        save_to_file("riigid_pealinnad.txt", country_capital)
                         break
                     else:
                         break
@@ -72,6 +72,8 @@ while True:
                     if ans == "y":
                         country = input("What's the name of a country with your capital? -->")
                         capital_country[capital]=country
+                        country_capital[country]=capital
+                        save_to_file("riigid_pealinnad.txt", country_capital)
                         break
                     else:
                         break
@@ -86,6 +88,7 @@ while True:
                         del country_capital[country]
                         capital=input("Please write the right name of a capital (in Estonian) --> ")
                         country_capital[country] = capital
+                        save_to_file("riigid_pealinnad.txt", country_capital)
                         break
                     else:
                         break
@@ -95,6 +98,8 @@ while True:
                     if ans == "y":
                         capital = input("What's the name of a capital with your country? -->")
                         country_capital[country]=capital
+                        print(country_capital)
+                        save_to_file("riigid_pealinnad.txt", country_capital)
                         break
                     else:
                         break
