@@ -8,9 +8,12 @@ import numpy as np #x=[min, max]
 from PIL import Image, ImageTk
 
 
-global D, x1, x2, x, i, y
+global x1, x2, x, i, y
+D = None
+
 
 def Solve():
+    global D, x1, x2, x, show1
     try:
         a = float(entryA.get())
         b = float(entryB.get())
@@ -22,12 +25,16 @@ def Solve():
             x1=round((-b+(D**(1/2)))/(2*a),2)
             x2=round((-b-(D**(1/2)))/(2*a),2)
             label5.configure(text=f"D > 0 --> 2 решения: \n x1 = {x1}\n x2 = {x2}")
-            Graph2x(x1,x2)
+
+            # Graph2x(x1,x2)
+            return  D
 
         elif D == 0:
             x =round((-b / (2*a)), 2)
             label5.configure(text=f"D = 0 --> 1 решение: \n x = {x}")
-            Graph1X()
+            # Graph1X()
+
+            return D
 
 
         else:
@@ -92,6 +99,17 @@ def Graph2x(x1,x2):
     plt.legend()
     plt.show()
 
+def ShowGraph():
+    if D != None:
+        if D > 0:
+            Graph2x(x1, x2)
+        elif D == 0:
+            Graph1X()
+        else:
+            pass
+    else:
+        pass
+
 
 
 
@@ -102,7 +120,7 @@ root.title("Решение квадратного уравнения")
 
 
 # bgimage=PhotoImage(file=r"C:\Users\SeagullToon\source\repos\kseniaTARgv24\targv24.Ksenia.1\graphic interface\text.png")
-original_image = Image.open(r"C:\Users\SeagullToon\source\repos\kseniaTARgv24\targv24.Ksenia.1\graphic interface\text.png")
+original_image = Image.open(r"graphic interface\text.png")
 resized_image = original_image.resize((900, 400))  # Resize to window size
 bgimage = ImageTk.PhotoImage(resized_image)
 
@@ -138,13 +156,13 @@ label4.place(x=575, y=180)
 button1=Button(root,text="Решить",font=("beer money", 45), command= Solve, bg="#ffe6e6")
 button1.place(x=650, y = 140)
 
+button2=Button(root,text="График",font=("beer money", 30) , command = ShowGraph, bg="#ffe6e6")
+button2.place(x=680, y = 40)
 
-label5=Label(root, text="Ответ...",bg = "#ddccff", compound="center",)
+
+
+label5=Label(root, font=1, text="Ответ...",bg = "#ddccff", compound="center",)
 label5.place(x=120, y= 290, width=600, height=90)
-
-
-
-
 
 
 root.mainloop()
