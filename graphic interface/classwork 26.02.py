@@ -4,6 +4,7 @@ from turtle import color
 from tkinter import filedialog
 import smtplib, ssl
 from email.message import *
+import imghdr 
 
 
 
@@ -18,31 +19,31 @@ def choose_img():
 def send():
     to=email.get()
     message_box=message.get()
-    topic=topic.get()
+    Topic=topic.get()
 
 
     smtp_server="smtp.gmail.com"
     port=587
     sender_email="ksenia.pleshakova2001@gmail.com"
-    password=""
+    password="pqlx oudg gpzj gumq"
     context=ssl.create_default_context()
     msg=EmailMessage()
     msg.set_content(message_box)
-    msg['Subject']=topic
+    msg['Subject']=Topic
     msg['From']="aaa"
     msg['To']=to
 
     with open(file, 'rb') as fimage:
         image = fimage.read()
-    msg.add_attachment(image, maintype='image', cubtype=imghdr.what(None, image))
+    msg.add_attachment(image, maintype='image', subtype=imghdr.what(None, image))
     try:
         server=smtplib.SMTP(smtp_server,port)
         server.starttls(context=context)
         server.login(sender_email,password)
         server.send_message(msg)
-        message.showinfo("info", "sent")
+        message_box.showinfo("info", "sent")
     except:
-        message.showerror("error")
+        message_box.showerror("error")
     finally:
         server.quit()
 
