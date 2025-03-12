@@ -124,6 +124,9 @@ def showStartMenu():
     
 
 
+
+
+
 def save_result(name, points):
     with open(r"C:\Users\SeagullToon\source\repos\kseniaTARgv24\targv24.Ksenia.1\graphic interface\results.txt", "r", encoding="utf-8") as f:
         scores = f.read()
